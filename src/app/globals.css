@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+  body {
+    @apply font-sans overflow-x-hidden bg-gray-50;
+  }
+}
+
+.warning-message {
+  @apply bg-amber-50 border border-amber-400 text-amber-800 py-3 px-4 rounded-lg mt-3 text-center text-sm font-medium;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-container {
+  @apply min-h-screen p-8 relative overflow-hidden;
+}
+
+.toast-container {
+  @apply fixed top-5 right-5 z-[9999] flex flex-col gap-3 max-w-[400px];
+}
+
+.toast {
+  @apply flex items-center gap-3 p-4 bg-white rounded shadow-lg border-l-4 min-w-[300px];
+}
+
+.toast-success {
+  @apply border-l-green-500;
+}
+
+.toast-error {
+  @apply border-l-red-500;
+}
+
+.toast-warning {
+  @apply border-l-amber-500;
+}
+
+.toast-icon {
+  @apply flex-shrink-0 flex items-center justify-center;
+}
+
+.toast-message {
+  @apply flex-1 text-sm font-semibold text-slate-800;
+}
+
+.toast-close {
+  @apply flex-shrink-0 bg-transparent border-none text-slate-400 cursor-pointer p-1 rounded hover:bg-slate-100;
+}
+
+.main-wrapper {
+  @apply max-w-[1400px] mx-auto relative z-10;
+}
+
+.header-card {
+  @apply bg-white rounded-lg overflow-hidden mb-9 shadow-lg border border-gray-200;
+}
+
+.header-gradient {
+  @apply bg-white p-10 relative overflow-hidden;
+}
+
+.header-content-flex {
+  @apply flex items-center justify-between gap-10 relative z-10 flex-wrap;
+}
+
+.header-left {
+  @apply flex items-center gap-6 flex-1 min-w-[300px];
+}
+
+.logo-badge {
+  @apply bg-white p-4 rounded shadow-md relative;
+}
+
+.logo-image {
+  @apply w-20 h-20 object-contain block rounded;
+}
+
+.logo-fallback {
+  @apply w-20 h-20 hidden items-center justify-center text-green-700;
+}
+
+.company-brand {
+  @apply m-0 mb-2 text-3xl font-black tracking-tight text-gray-900;
+}
+
+.company-tagline {
+  @apply m-0 mb-2 text-base font-semibold text-gray-700;
+}
+
+.company-location {
+  @apply flex items-center gap-2 text-sm text-gray-700 font-medium px-3 py-2 bg-gray-100 rounded-full border border-gray-300;
+}
+
+.header-right {
+  @apply text-right text-gray-900 flex-1 min-w-[300px] flex flex-col items-end;
+}
+
+.title-badge {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 bg-gray-100 rounded-full text-sm font-extrabold text-gray-900 mb-4 border-2 border-gray-300 shadow;
+}
+
+.main-title {
+  @apply m-0 mb-2 text-3xl font-black text-gray-900 tracking-tight;
+}
+
+.main-subtitle {
+  @apply m-0 text-base text-gray-700 font-medium;
+}
+
+.content-grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+}
+
+.left-column,
+.right-column {
+  @apply flex flex-col gap-6;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-8 border-2 border-gray-200 transition-all hover:-translate-y-1 hover:shadow-lg;
+}
+
+.card-label {
+  @apply flex items-center gap-3 text-lg font-extrabold text-slate-800 mb-4;
+}
+
+.card-title {
+  @apply m-0 text-lg font-extrabold text-slate-800 flex items-center gap-2;
+}
+
+.card-section-title {
+  @apply m-0 mb-6 text-xl font-extrabold text-slate-800 flex items-center gap-2;
+}
+
+.card-header {
+  @apply flex items-center justify-between mb-6 flex-wrap gap-4;
+}
+
+.upload-zone {
+  @apply border-4 border-dashed border-slate-300 rounded-lg p-12 text-center bg-white cursor-pointer transition-all relative overflow-hidden hover:border-green-700 hover:bg-gray-50;
+}
+
+.upload-icon {
+  @apply text-green-700 mx-auto mb-5 block text-5xl;
+}
+
+.upload-title {
+  @apply m-0 mb-2 text-xl font-extrabold text-slate-800;
+}
+
+.upload-subtitle {
+  @apply m-0 mb-6 text-slate-500 text-sm font-medium;
+}
+
+.file-input {
+  @apply hidden;
+}
+
+.btn-template {
+  @apply flex items-center gap-2 px-5 py-3 bg-emerald-500 hover:bg-emerald-600 text-white border-none rounded text-sm font-bold cursor-pointer shadow transition-all;
+}
+
+.btn-upload {
+  @apply inline-block px-10 py-4 bg-gray-900 hover:bg-gray-800 text-white rounded cursor-pointer font-bold text-sm border-none shadow-lg transition-all;
+}
+
+.btn-preview {
+  @apply w-full mt-5 py-4 px-6 bg-gray-900 hover:bg-gray-800 text-white border-none rounded text-base font-bold cursor-pointer shadow flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-generate {
+  @apply w-full py-5 px-8 bg-emerald-600 hover:bg-emerald-700 text-white border-none rounded text-lg font-extrabold cursor-pointer shadow flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.form-group {
+  @apply mb-5;
+}
+
+.input-label,
+.input-label-small {
+  @apply flex items-center gap-2 text-sm font-bold text-slate-800 mb-2;
+}
+
+.date-input,
+.text-input,
+.text-input-small {
+  @apply w-full py-3 px-4 text-sm border-2 border-slate-200 rounded bg-white outline-none font-semibold text-black focus:border-green-700 focus:bg-emerald-50;
+}
+
+.text-input-small {
+  @apply py-2 px-3 text-sm;
+}
+
+.project-grid {
+  @apply grid gap-5 grid-cols-1 sm:grid-cols-2;
+}
+
+.preview-title {
+  @apply m-0 mb-5 text-lg font-extrabold text-slate-800 flex items-center gap-2;
+}
+
+.table-container {
+  @apply max-h-[500px] overflow-auto border-2 border-slate-200 rounded;
+}
+
+.preview-table {
+  @apply w-full text-sm border-collapse;
+}
+
+.preview-table thead {
+  @apply sticky top-0 z-10 bg-gray-100;
+}
+
+.preview-table th {
+  @apply px-4 py-3 text-left font-extrabold text-slate-800 border-b-2 border-slate-300 whitespace-nowrap;
+}
+
+.preview-table td {
+  @apply px-4 py-3 text-slate-600 border-b border-slate-200;
+}
+
+.spinner {
+  @apply w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin;
+}
+
+.loading-container {
+  @apply mt-5 text-center p-6;
+}
+
+.loading-spinner {
+  @apply w-12 h-12 border-4 border-gray-200 border-t-green-700 rounded-full animate-spin mx-auto mb-4;
+}
+
+.loading-text {
+  @apply m-0 text-slate-500 font-semibold text-sm;
+}
+
+.guide-card {
+  @apply bg-gray-50 border-2 border-gray-200 rounded-lg p-6;
+}
+
+.guide-title {
+  @apply m-0 mb-4 text-lg font-extrabold text-slate-800 flex items-center gap-2;
+}
+
+.guide-list {
+  @apply list-none m-0 p-0;
+}
+
+.guide-list li {
+  @apply flex items-start gap-3 mb-3 text-sm text-slate-600 font-medium;
+}
+
+.guide-list li span {
+  @apply text-green-700 font-extrabold flex-shrink-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center text-xs;
+}
+
+.footer {
+  @apply mt-10 bg-white rounded-lg shadow p-7 border-2 border-gray-200 text-center;
+}
+
+.footer p {
+  @apply m-0 text-slate-500 font-semibold text-sm;
+}
+
+@media (max-width: 768px) {
+  .header-content-flex {
+    @apply flex-col items-start;
+  }
+  .header-right {
+    @apply items-start text-left;
+  }
+  .company-brand {
+    @apply text-2xl;
+  }
+  .main-title {
+    @apply text-2xl;
+  }
+}
